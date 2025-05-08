@@ -6,7 +6,8 @@ from cvs_logger import log_to_csv
 table = PrettyTable()
 
 
-print("Welcome to Maintenance KPI Program")
+print("Welcome to Machine Breakdown Register Python")
+
 
 date_str = non_empty_input("Enter a date (DD/MM/YYYY): ")
 date_obj = datetime.strptime(date_str, "%d/%m/%Y")
