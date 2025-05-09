@@ -1,9 +1,14 @@
 Date,Equipment Name,Failure Description,Breakdown Start,Breakdown End,Total Breakdown (in Hours)
-25/12/1994,motor,electrical issue,10:10:00,13:00:00,2.83
-2025-05-01,conveyor belt,motor issue,08:15:00,13:05:00,4.83
-2003-05-15,dasasd,dasasdas,08:15:00,13:20:00,5.08
-2025-05-01,Conveyor Belt,Motor Fault,08:15:00,14:50:00,6.58
-2025-05-01,Motor,electrical fault,08:15:00,15:30:00,7.25
-2025-05-10,main assembly line,motor issue,08:50:00,13:20:00,4.5
-2025-02-02,main line,motor issue,08:50:00,19:15:00,10.42
-2024-10-10,dsdas,dasdas,02:15:00,08:50:00,6.58
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+,,,,,
+2025-05-09,Main Assembly Line Conveyor,Motor Fault,09:15:00,14:25:00,5.17

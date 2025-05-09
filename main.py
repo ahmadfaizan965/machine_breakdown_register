@@ -11,9 +11,8 @@ print("*** A CLI Program Register All of Your Machine Breakdown ***\n")
 
 def main():
 
-
     # take user input for date and format it
-    date_str = non_empty_input("Enter a date (DD/MM/YYYY): >> ")
+    date_str = non_empty_input("Please Enter Entry's date (DD/MM/YYYY): >> ")
     date_obj = datetime.strptime(date_str, "%d/%m/%Y")
 
     # User inputs for other details
@@ -47,17 +46,22 @@ def main():
         data_row=[date_obj.date(), equipment, failure_details, time1.time(), time2.time(), hours]
     )
 
-    print(f" \n### Your Breakdown Data saved to {csv_file} ###\n")
     print(f"Entry Details:")
     print(table)
+    print(f" \n### Your Breakdown Data saved to {csv_file} ###\n")
+
+def re_run():
+    prompt = input("Want to Add More Entries ? (Y/N) >>")
+    if prompt == "y" or prompt == "Y":
+        main()
+    elif prompt == "n" or prompt == "N":
+        print("Thanks for using the Program\n")
+    else:
+        print("Invalid Input")
+        print("Program Terminated\n")
 
 main()
-prompt = input("Want to Add More Entries ? (Y/N) >>")
-if prompt == "y" or prompt == "Y":
-    main()
-elif prompt == "n" or prompt == "N":
-    print("Thanks for using the Program")
-else:
-    print("Invalid Input")
-    print("Program Terminated")
+re_run()
+
+
 
