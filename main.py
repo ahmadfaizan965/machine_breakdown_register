@@ -1,3 +1,5 @@
+from email import header
+import csv
 from prettytable import PrettyTable
 from datetime import datetime, date
 from non_empty_feilds import non_empty_input
@@ -6,11 +8,12 @@ import artwork
 
 table = PrettyTable()
 
-print(artwork.art)
-print("*** A CLI Program Register All of Your Machine Breakdown ***\n")
+# Define CSV file and header
+csv_file = "breakdown-log.csv"
+header = ["Date", "Equipment Name", "Failure Description", "Breakdown Start", "Breakdown End",
+              "Total Breakdown (in Hours)"]
 
 def main():
-
     # take user input for date and format it
     date_str = non_empty_input("Please Enter Entry's date (DD/MM/YYYY): >> ")
     date_obj = datetime.strptime(date_str, "%d/%m/%Y")
@@ -34,11 +37,6 @@ def main():
                          "Total Breakdown (in Hours)", ]
     table.add_row([date_obj.date(), equipment, failure_details, time1.time(), time2.time(), hours])
 
-    # Define CSV file and header
-    csv_file = "breakdown-log.csv"
-    header = ["Date", "Equipment Name", "Failure Description", "Breakdown Start", "Breakdown End",
-              "Total Breakdown (in Hours)", ]
-
     # Save to CSV
     log_to_csv(
         filename=csv_file,
@@ -50,18 +48,34 @@ def main():
     print(table)
     print(f" \n### Your Breakdown Data saved to {csv_file} ###\n")
 
+def clear_csv_data(filename, header):
+    filename = csv_file
+    with open(filename, mode='w', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(header)
+    print(f"\n### All Previous Log data cleared from {filename} ###\n")
+
+
 def re_run():
     prompt = input("Want to Add More Entries ? (Y/N) >>")
     if prompt == "y" or prompt == "Y":
         main()
     elif prompt == "n" or prompt == "N":
-        print("Thanks for using the Program\n")
+        print("Thank You! for using this program!")
     else:
         print("Invalid Input")
         print("Program Terminated\n")
 
-main()
-re_run()
 
 
-
+print(artwork.art)
+print("*** A CLI Program Register All of Your Machine Breakdown ***\n")
+main_prompt = input("\nPlease Type 'entry' for *New Entry* or 'clear' to Remove ALL Previous Entry >>")
+if main_prompt == "entry":
+    main()
+    re_run()
+elif main_prompt == "clear":
+    clear_csv_data(csv_file, header)
+else:
+    print("Invalid Input")
+    print("Program Terminated")
