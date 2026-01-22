@@ -7,10 +7,11 @@ import subprocess
 from datetime import datetime
 
 class BreakdownApp:
+
     def __init__(self, root):
         self.root = root
         self.root.title("Machine Breakdown Logger")
-        self.root.geometry("500x350")
+        self.root.geometry("500x400")
         self.csv_file = "breakdown-log.csv"
         self.header = ["Date", "Equipment Name", "Failure Description", "Start Time", "End Time", "Total Hours"]
 
@@ -43,7 +44,9 @@ class BreakdownApp:
     def create_widgets(self):
         # Header
         tk.Label(self.root, text="Machine Breakdown Logger", font=("Arial", 18, "bold"), pady=20).pack()
-
+        footer_frame = tk.Frame(self.root)
+        footer_frame.pack(side="bottom", fill="x", pady=10)
+        tk.Label(footer_frame, text="Developed & Maintain by: https://github.com/ahmadfaizan965", font=("Arial", 9), fg="#555555").pack()
         # Input Area
         input_frame = tk.Frame(self.root)
         input_frame.pack(padx=30, fill="x")
