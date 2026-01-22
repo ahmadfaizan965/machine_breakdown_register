@@ -1,11 +1,12 @@
 # Python CLI Program to Record Machine Breakdown Time
-<p>lorem ipsum</p>
+Machine Breakdown Register
+: A machine breakdown register is a vital record used to log and track instances of equipment failure. It serves as a central repository for documenting the date, time, nature, and causes of breakdowns, as well as the actions taken to resolve them. This information is crucial for maintenance analysis, identifying recurring issues, and improving overall equipment reliability and uptime.
 
 ### The Final Excel Sheet is inside folder 'Final Excel Sheet'
 <p>You may change the Final Excel Sheet as per your style sense or personal preference.
 
 
-**Note: Goto <b>Data</b> Tab in Microsoft Excel and hit Refresh All to fetch latest data.</p>
+<p style="color: crimson">**Note: Goto <b>Data</b> Tab in Microsoft Excel and hit Refresh All to fetch latest data.</p>
 
 ##### Requirements: Python
 
